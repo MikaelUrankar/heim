@@ -18,5 +18,7 @@ cfg_if::cfg_if! {
         pub mod windows;
     } else if #[cfg(target_os = "macos")] {
         pub mod macos;
+    } else if #[cfg(target_os = "freebsd")] {
+        pub mod freebsd;
     }
 }

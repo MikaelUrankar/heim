@@ -92,7 +92,7 @@ impl TryFrom<libc::c_int> for Signal {
             libc::SIGTTOU => Ok(Signal::Ttou),
             libc::SIGUSR1 => Ok(Signal::Usr1),
             libc::SIGUSR2 => Ok(Signal::Usr2),
-            #[cfg(not(target_os = "macos"))]
+            #[cfg(not(any(target_os = "macos", target_os = "freebsd")))]
             libc::SIGPOLL => Ok(Signal::Poll),
             libc::SIGPROF => Ok(Signal::Prof),
             libc::SIGSYS => Ok(Signal::Sys),
@@ -129,7 +129,7 @@ impl From<Signal> for libc::c_int {
             Signal::Ttou => libc::SIGTTOU,
             Signal::Usr1 => libc::SIGUSR1,
             Signal::Usr2 => libc::SIGUSR2,
-            #[cfg(not(target_os = "macos"))]
+            #[cfg(not(any(target_os = "macos", target_os = "freebsd")))]
             Signal::Poll => libc::SIGPOLL,
             Signal::Prof => libc::SIGPROF,
             Signal::Sys => libc::SIGSYS,

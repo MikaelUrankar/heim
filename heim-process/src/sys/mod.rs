@@ -16,6 +16,10 @@ cfg_if::cfg_if! {
         mod windows;
 
         pub use self::windows::*;
+    } else if #[cfg(target_os = "freebsd")] {
+        mod freebsd;
+
+        pub use self::freebsd::*;
     } else {
         compile_error!("Unsupported target OS");
     }

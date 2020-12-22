@@ -7,8 +7,9 @@ use heim_common::prelude::*;
 pub const MNT_WAIT: libc::c_int = 1;
 pub const MNT_NOWAIT: libc::c_int = 2;
 
+// XXX mik
 extern "C" {
-    fn getfsstat64(buf: *mut libc::statfs, bufsize: libc::c_int, flags: libc::c_int)
+    fn getfsstat(buf: *mut libc::statfs, bufsize: libc::c_int, flags: libc::c_int)
         -> libc::c_int;
 }
 
@@ -17,10 +18,10 @@ extern "C" {
 // and switch to the `MNT_WAIT` mode?
 // Should be considered later.
 pub fn mounts() -> Result<Vec<libc::statfs>> {
-    let expected_len = unsafe { getfsstat64(ptr::null_mut(), 0, MNT_NOWAIT) };
+    let expected_len = unsafe { getfsstat(ptr::null_mut(), 0, MNT_NOWAIT) };
     let mut mounts: Vec<libc::statfs> = Vec::with_capacity(expected_len as usize);
     let result = unsafe {
-        getfsstat64(
+        getfsstat(
             mounts.as_mut_ptr(),
             mem::size_of::<libc::statfs>() as libc::c_int * expected_len,
             MNT_NOWAIT,

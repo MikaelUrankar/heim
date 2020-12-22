@@ -9,7 +9,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         let platform = host::platform().await?;
 
         println!(
-            "{} {} {} {} {}",
+            "XXX mik: sys {}\nrel {}\nhn {}\nversion {}\narch {}",
             platform.system(),
             platform.release(),
             platform.hostname(),

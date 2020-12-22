@@ -41,9 +41,9 @@ path = "top.rs"
 name = "pidof"
 path = "pidof.rs"
 
-[[example]]
-name = "process"
-path = "process.rs"
+#[[example]]
+#name = "process"
+#path = "process.rs"
 
 [[example]]
 name = "wait"
@@ -52,6 +52,10 @@ path = "wait.rs"
 [[example]]
 name = "uptime"
 path = "uptime.rs"
+
+[[example]]
+name = "users"
+path = "users.rs"
 
 [[example]]
 name = "tokio"

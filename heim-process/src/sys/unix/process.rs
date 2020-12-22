@@ -13,7 +13,7 @@ use crate::{Pid, ProcessError, ProcessResult};
 #[cfg(all(target_os = "linux", not(target_env = "musl")))]
 #[allow(trivial_numeric_casts)]
 const PRIO_PROCESS: libc::c_uint = libc::PRIO_PROCESS as libc::c_uint;
-#[cfg(any(all(target_os = "linux", target_env = "musl"), target_os = "macos"))]
+#[cfg(any(all(target_os = "linux", target_env = "musl"), target_os = "macos", target_os = "freebsd"))]
 #[allow(trivial_numeric_casts)]
 const PRIO_PROCESS: libc::c_int = libc::PRIO_PROCESS as libc::c_int;
 

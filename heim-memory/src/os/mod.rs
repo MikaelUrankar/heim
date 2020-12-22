@@ -11,6 +11,10 @@ pub mod linux;
 #[cfg_attr(docsrs, doc(cfg(target_os = "macos")))]
 pub mod macos;
 
+#[cfg(any(target_os = "freebsd", doc))]
+#[cfg_attr(docsrs, doc(cfg(target_os = "freebsd")))]
+pub mod freebsd;
+
 /// OS-specific extension to [Swap].
 ///
 /// ## Compatibility

@@ -9,7 +9,7 @@ default-members = [
     "heim-memory",
     "heim-disk",
     "heim-net",
-    "heim-process",
+#    "heim-process",
     "heim-virt",
     "heim-sensors",
 ]
@@ -27,7 +27,7 @@ members = [
     "heim-memory",
     "heim-disk",
     "heim-net",
-    "heim-process",
+#    "heim-process",
     "heim-virt",
     "heim-sensors",
 

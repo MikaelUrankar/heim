@@ -34,7 +34,9 @@ version-sync = "0.9"
 
 [features]
 default = []
-full = ["host", "cpu", "memory", "disk", "net", "process", "virt", "sensors"]
+# XXX mik
+#full = ["host", "cpu", "memory", "disk", "net", "process", "virt", "sensors"]
+full = ["host", "cpu", "memory", "disk", "net", "virt", "sensors"]
 unstable = []
 backtrace = ["unstable", "heim-common/backtrace"]
 
@@ -44,7 +46,7 @@ cpu = ["heim-cpu"]
 memory = ["heim-memory"]
 disk = ["heim-disk"]
 net = ["heim-net"]
-process = ["heim-process"]
+#process = ["heim-process"]
 virt = ["heim-virt"]
 sensors = ["heim-sensors"]
 

@@ -7,12 +7,13 @@ use heim_common::prelude::*;
 use super::bindings;
 use crate::FileSystem;
 
+// XXX mik
 #[derive(Debug)]
 pub struct Partition {
     device: String,
     fs: FileSystem,
     mount_point: PathBuf,
-    flags: u32,
+    flags: u64,
 }
 
 impl Partition {
@@ -28,7 +29,7 @@ impl Partition {
         &self.fs
     }
 
-    pub fn raw_flags(&self) -> u32 {
+    pub fn raw_flags(&self) -> u64 {
         self.flags
     }
 }

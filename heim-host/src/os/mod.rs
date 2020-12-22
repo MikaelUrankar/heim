@@ -11,3 +11,7 @@ pub mod macos;
 #[cfg(any(target_os = "windows", doc))]
 #[cfg_attr(docsrs, doc(cfg(target_os = "windows")))]
 pub mod windows;
+
+#[cfg(any(target_os = "freebsd", doc))]
+#[cfg_attr(docsrs, doc(cfg(target_os = "freebsd")))]
+pub mod freebsd;
